@@ -1,14 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300&display=swap");
+
 @media all {
-    .select-all-button {
+    .main-controls__select-all-button {
         background: url("icons/select-all.png") no-repeat center;
     }
 
-    .delete {
+    .task-item__delete-button {
         background: url("icons/close.png") no-repeat center;
     }
 
-    .status:checked + .checkbox-label {
+    .task-item__status:checked + .task-item__checkbox-label {
         background: url("icons/completed.png") no-repeat center;
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .main-controls__select-all-button {
+        background: url("icons/select-all@2x.png") no-repeat center;
+    }
+
+    .task-item__delete-button {
+        background: url("icons/close@2x.png") no-repeat center;
+    }
+
+    .task-item__status:checked + .task-item__checkbox-label {
+        background: url("icons/completed@2x.png") no-repeat center;
     }
 }
 
@@ -18,29 +35,30 @@ body {
     color: #cccccc;
     display: flex;
     justify-content: center;
+    min-width: 562px;
 }
 
 .todo-app {
-    width: 560px;
+    width: 562px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.header-title {
+.header__header-title {
     color: #cccccc;
     font-weight: 100;
     font-size: 100px;
     margin: 0;
 }
 
-.frame-cover {
+.todo-app__frame-cover {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.frame {
+.todo-app__frame {
     height: 400px;
     background: #ffffff;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
@@ -50,7 +68,7 @@ body {
     z-index: 2;
 }
 
-.frame-cover::before {
+.todo-app__frame-cover::before {
     width: 556px;
     height: 6px;
     background: #ffffff;
@@ -61,7 +79,7 @@ body {
     z-index: 1;
 }
 
-.frame-cover::after {
+.todo-app__frame-cover::after {
     width: 552px;
     height: 5px;
     background: #ffffff;
@@ -72,20 +90,21 @@ body {
     z-index: 0;
 }
 
-.main-controls {
+.todo-app__main-controls {
     display: flex;
     align-items: center;
     box-shadow: inset 0 0 2px #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
 }
 
-.create-new-task {
+.main-controls__create-new-task {
     display: flex;
     flex: 1;
     height: 100%;
     justify-items: center;
 }
 
-.select-all-button {
+.main-controls__select-all-button {
     height: 64px;
     width: 64px;
     background-size: 24px 12px;
@@ -94,26 +113,25 @@ body {
     margin-right: 4px;
 }
 
-.input-field-create-new {
+.main-controls__input-field-create-new {
     font-family: Roboto, sans-serif;
     font-size: 24px;
     border: none;
     flex: 1;
-    width: 100%;
 }
 
-.input-field-create-new::placeholder {
+.main-controls__input-field-create-new::placeholder {
     color: #cccccc;
     font-style: italic;
 }
 
-.tasks {
+.todo-app__tasks {
     flex-grow: 1;
     overflow: auto;
     color: #666666;
 }
 
-.task-list {
+.todo-app__task-list {
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -121,30 +139,32 @@ body {
     padding: 0;
 }
 
-.checkbox-view {
+.task-item__checkbox-view {
     display: flex;
     align-content: space-between;
-    border: 1px solid #e6e6e6;
     min-height: 64px;
     padding: 12px;
     box-sizing: border-box;
     align-items: center;
 }
 
+.todo-app__task-item {
+    border-bottom: 1px solid #e6e6e6;
+}
 
-.task-item:hover {
+.todo-app__task-item:hover {
     background: #fafafa;
 }
 
-.task-item:hover .delete {
+.todo-app__task-item:hover .task-item__delete-button {
     opacity: 1;
 }
 
-.status {
+.task-item__status {
     opacity: 0;
 }
 
-.checkbox {
+.task-item__checkbox {
     position: relative;
     display: inline-block;
     margin-right: 10px;
@@ -153,7 +173,7 @@ body {
     flex-shrink: 0;
 }
 
-.checkbox-label {
+.task-item__checkbox-label {
     width: 40px;
     height: 40px;
     position: absolute;
@@ -167,15 +187,15 @@ body {
     text-indent: -9999px;
 }
 
-.status:focus + .checkbox-label {
+.task-item__status:focus + .task-item__checkbox-label {
     border: 1px solid #8ac2c2;
 }
 
-.status:hover + .checkbox-label {
+.task-item__status:hover + .task-item__checkbox-label {
     border: 1px solid #8ac2c2;
 }
 
-.status:checked + .checkbox-label {
+.task-item__status:checked + .task-item__checkbox-label {
     width: 40px;
     height: 40px;
     position: absolute;
@@ -189,13 +209,13 @@ body {
     background-size: 20px 20px;
 }
 
-.task-list-text {
+.task-item__task-list-text {
     flex-grow: 1;
     word-break: break-all;
     font-size: 24px;
 }
 
-.delete {
+.task-item__delete-button {
     opacity: 0;
     background-size: 18px 18px;
     width: 40px;
@@ -205,11 +225,11 @@ body {
     flex-shrink: 0;
 }
 
-.delete:focus {
+.task-item__delete-button:focus {
     opacity: 1;
 }
 
-.action-bar {
+.todo-app__action-bar {
     width: 562px;
     height: 43px;
     box-shadow: inset 0 1px 0 #e6e6e6;
@@ -224,46 +244,47 @@ body {
     flex-shrink: 0;
 }
 
-.task-counter {
+.action-bar__task-counter {
     margin-right: 14px;
 }
 
-.action-bar-button {
+.todo-app__action-bar-button {
     padding: 4px 8px 4px 8px;
 }
 
-.action-bar-button:hover {
+.todo-app__action-bar-button:hover {
     background: #f5f5f5;
     border-radius: 3px;
 }
 
-.task-filter-input {
+.action-bar__task-filter-input {
     position: absolute;
     left: -9999px;
 }
 
-.task-filter-text {
+.action-bar-item__task-filter-text {
     border: 1px solid transparent;
     border-radius: 3px;
 }
 
-.task-filter-input:checked + .task-filter-text {
+.action-bar__task-filter-input:checked + .action-bar-item__task-filter-text {
     border: 1px solid #cccccc;
     border-radius: 3px;
 }
 
-.task-filter-input:focus + .task-filter-text {
+.action-bar__task-filter-input:focus + .action-bar-item__task-filter-text {
     border: 1px solid #8ac2c2;
     border-radius: 3px;
 }
 
-.clear-completed {
+.action-bar-item__clear-completed {
     background: none;
     border: none;
+    font-family: Roboto, serif;
     font-size: 14px;
     color: #888888;
 }
 
-.clear-completed:active {
+.action-bar-item__clear-completed:active {
     border: none;
 }
