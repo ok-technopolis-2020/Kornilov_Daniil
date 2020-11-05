@@ -1,0 +1,23 @@
+{
+  "name": "kornilov_daniil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ok-technopolis-2020/Kornilov_Daniil.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ok-technopolis-2020/Kornilov_Daniil/issues"
+  },
+  "homepage": "https://github.com/ok-technopolis-2020/Kornilov_Daniil#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "postcss-nested": "^4.2.3"
+  }
+}
