@@ -1,58 +1,59 @@
 .todo-app__action-bar {
-	width: 562px;
-	height: 43px;
-	box-shadow: inset 0 1px 0 var(--shadow-color);
-	align-items: center;
-	display: flex;
-	justify-content: space-around;
-	font-size: 14px;
-	color: #888888;
-	position: sticky;
-	bottom: 0;
-	background: white;
-	flex-shrink: 0;
+    width: 562px;
+    height: 43px;
+    box-shadow: inset 0 1px 0 var(--shadow-color);
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+    color: #888888;
+    position: sticky;
+    bottom: 0;
+    background: white;
+    flex-shrink: 0;
 }
+
 .action-bar__task-counter {
-	margin-right: 14px;
+    margin-right: 14px;
 }
+
 .todo-app__action-bar-button {
-	padding: 4px 8px 4px 8px;
-	&:hover {
-		background: var(--bg-color);
-		border-radius: 3px;
-	}
+    padding: 4px 8px 4px 8px;
+
+    &:hover {
+        background: var(--bg-color);
+        border-radius: 3px;
+    }
 }
+
 .action-bar__task-filter-input {
-	position: absolute;
-	left: -9999px;
-	&:checked {
-		+ {
-			.action-bar-item__task-filter-text {
-				border: 1px solid var(--font-color);
-				border-radius: 3px;
-			}
-		}
-	}
-	&:focus {
-		+ {
-			.action-bar-item__task-filter-text {
-				border: 1px solid #8ac2c2;
-				border-radius: 3px;
-			}
-		}
-	}
+    position: absolute;
+    left: -9999px;
 }
+
 .action-bar-item__task-filter-text {
-	border: 1px solid transparent;
-	border-radius: 3px;
+    border: 1px solid transparent;
+    border-radius: 3px;
 }
+
+.action-bar__task-filter-input:checked + .action-bar-item__task-filter-text {
+    border: 1px solid var(--font-color);
+    border-radius: 3px;
+}
+
+.action-bar__task-filter-input:focus + .action-bar-item__task-filter-text {
+    border: 1px solid #8ac2c2;
+    border-radius: 3px;
+}
+
 .action-bar-item__clear-completed {
-	background: none;
-	border: none;
-	font-family: Roboto, serif;
-	font-size: 14px;
-	color: #888888;
-	&:active {
-		border: none;
-	}
+    background: none;
+    border: none;
+    font-family: Roboto, serif;
+    font-size: 14px;
+    color: #888888;
+
+    &:active {
+        border: none;
+    }
 }
