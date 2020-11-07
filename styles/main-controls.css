@@ -1,0 +1,34 @@
+.todo-app__main-controls {
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0 0 2px #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.main-controls__create-new-task {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    justify-items: center;
+}
+
+.main-controls__select-all-button {
+    height: 64px;
+    width: 64px;
+    background-size: 24px 12px;
+    border: none;
+    padding: 0;
+    margin-right: 4px;
+}
+
+.main-controls__input-field-create-new {
+    &::placeholder {
+        color: #cccccc;
+        font-style: italic;
+    }
+
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    border: none;
+    flex: 1;
+}

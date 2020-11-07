@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300&display=swap");
+
+@media all {
+    .main-controls__select-all-button {
+        background: url("../icons/select-all.png") no-repeat center;
+    }
+
+    .task-item__delete-button {
+        background: url("../icons/close.png") no-repeat center;
+    }
+
+    .task-item__status:checked + .task-item__checkbox-label {
+        background: url("../icons/completed.png") no-repeat center;
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+    .main-controls__select-all-button {
+        background: url("../icons/select-all@2x.png") no-repeat center;
+    }
+
+    .task-item__delete-button {
+        background: url("../icons/close@2x.png") no-repeat center;
+    }
+
+    .task-item__status:checked + .task-item__checkbox-label {
+        background: url("../icons/completed@2x.png") no-repeat center;
+    }
+}
+
+:root {
+    --font-color: #cccccc;
+    --bg-color: #f5f5f5;
+    --frame-bg-color: #ffffff;
+    --width: 562px;
+    --shadow-color: #e6e6e6;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: "Roboto", "Arial", sans-serif;
+    color: var(--font-color);
+    display: flex;
+    justify-content: center;
+    min-width: var(--width);
+}
+
+.todo-app {
+    width: var(--width);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header__header-title {
+    color: var(--font-color);
+    font-weight: 100;
+    font-size: 100px;
+    margin: 0;
+}

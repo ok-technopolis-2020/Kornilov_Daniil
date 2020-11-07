@@ -1,0 +1,12 @@
+# Default ignored files
+/shelf/
+/.idea/
+# Datasource local storage ignored files
+/../../../../../:\Technopolis\Front\Kornilov_Daniil\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+/node_modules/
+/dist/
+/.cache/
+/package-lock.json/
